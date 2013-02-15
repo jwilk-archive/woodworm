@@ -9,10 +9,10 @@
    $ woodworm bigfile
 
    $ md5sum < bigfile
-   2.9G    bigfile
-
-   $ md5sum < bigfile
    580fa3e9f06a6fbce139134a58124d2f  -
+
+   $ du -sh bigfile
+   2.9G    bigfile
 
 Under the hood, *woodworm* uses `fallocate(2)`_ in the ``FALLOC_FL_PUNCH_HOLE`` mode.
 
