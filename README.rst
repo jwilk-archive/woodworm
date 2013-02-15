@@ -1,0 +1,21 @@
+*woodworm* punches holes in exiting files, without changing their contents::
+
+   $ md5sum < bigfile
+   580fa3e9f06a6fbce139134a58124d2f  -
+
+   $ du -sh bigfile
+   5.9G    bigfile
+
+   $ woodworm bigfile
+
+   $ md5sum < bigfile
+   2.9G    bigfile
+
+   $ md5sum < bigfile
+   580fa3e9f06a6fbce139134a58124d2f  -
+
+Under the hood, *woodworm* uses `fallocate(2)`_ in the ``FALLOC_FL_PUNCH_HOLE`` mode.
+
+.. _fallocate(2): http://www.kernel.org/doc/man-pages/online/pages/man2/fallocate.2.html
+
+.. vim:ts=3 sw=3 et
