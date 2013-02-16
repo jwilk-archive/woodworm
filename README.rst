@@ -1,4 +1,4 @@
-*woodworm* punches holes in exiting files, without changing their contents::
+*woodworm* punches holes in existing files, without changing their contents::
 
    $ md5sum < bigfile
    580fa3e9f06a6fbce139134a58124d2f  -
