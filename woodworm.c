@@ -18,7 +18,7 @@ void error(const char *reason)
 
 int main(int argc, char **argv)
 {
-    const size_t block_size = 64 << 10;
+    const size_t block_size = 4 << 20;
     const ssize_t min_hole_size = 1 << 10;
     int n;
     for (n = 1; n < argc; n++) {
