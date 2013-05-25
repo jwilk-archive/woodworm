@@ -42,8 +42,11 @@ int main(int argc, char **argv)
                     if (l < 0)
                         l = r;
                 } else {
-                    if (l >= 0 && r - l >= min_hole_size)
-                        fallocate(fd, FALLOC_FL_PUNCH_HOLE | FALLOC_FL_KEEP_SIZE, offset + l, r - l);
+                    if (l >= 0 && r - l >= min_hole_size) {
+                        int rc = fallocate(fd, FALLOC_FL_PUNCH_HOLE | FALLOC_FL_KEEP_SIZE, offset + l, r - l);
+                        if (rc == -1)
+                            error(path);
+                    }
                     l = -1;
                 }
             }
