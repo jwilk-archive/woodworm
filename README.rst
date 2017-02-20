@@ -1,3 +1,8 @@
+.. warning::
+
+   This software is obsolete.
+   Please use ``fallocate --dig-holes`` (from util-linux v2.25+) instead.
+
 *woodworm* punches holes in existing files, without changing their contents::
 
    $ md5sum < bigfile
